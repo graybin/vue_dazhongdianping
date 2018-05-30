@@ -42,7 +42,7 @@ export default {
 
         .redbag{
             height:5.86rem;
-            margin:0.286rem;
+            margin:0.286rem;    
             display: flex;
             
 
@@ -51,6 +51,7 @@ export default {
                     color:#fff;
                     display: block;
                     padding-left: 8px;
+                    text-decoration: none;
                 }
 
                 .redbag-left{

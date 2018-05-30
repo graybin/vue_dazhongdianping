@@ -1,8 +1,6 @@
 <template>
     <div class="home-reduce">
-        <div class="border">
-
-        </div>
+        <div class="border"></div>
         <div class="reduce-sale">
             <a id="alink">
                 <span class="one">超值优惠</span>
