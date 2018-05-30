@@ -104,7 +104,7 @@ export default {
 <style lang="scss" scoped>
     .icons{
         position: relative;
-        height: 13.8rem;
+        height: 14.9rem;
         text-align: center;
 
         .iconsFix{
