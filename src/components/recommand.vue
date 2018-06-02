@@ -115,7 +115,8 @@ export default {
                         font-weight: 700;
                         color: #111;
                         overflow: hidden;
-                        height: 1.65rem;
+                        height: 1.7rem;
+                        line-height: 1.7rem;
                     }
                     .recommand-desc{
                         font-size: 13px;
