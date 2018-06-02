@@ -100,7 +100,6 @@ export default {
                 }
 
                 .sale-img{
-
                     height: 6rem;
                     width: 100%;
 

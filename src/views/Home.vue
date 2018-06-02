@@ -13,13 +13,13 @@
 
 <script>
 // @ is an alias to /src
-import homeHeader from  '@/components/Header.vue'
-import homeIcons from '@/components/icons.vue'
-import headline from '@/components/headline.vue'
-import redbag from '@/components/redbag.vue'
-import superReduce from '@/components/superReduce.vue'
-import recommand from '@/components/recommand.vue'
-import linkToApp from '@/components/linkToApp.vue'
+import homeHeader from  '@/components/Home/Header.vue'
+import homeIcons from '@/components/Home/icons.vue'
+import headline from '@/components/Home/headline.vue'
+import redbag from '@/components/Home/redbag.vue'
+import superReduce from '@/components/Home/superReduce.vue'
+import recommand from '@/components/Home/recommand.vue'
+import linkToApp from '@/components/Home/linkToApp.vue'
 import axios from 'axios'
 
 export default {

@@ -1,7 +1,7 @@
 <template>
     <div class="headline">
         <div class="headlinetitle">
-            <img src="../assets/images/headline.jpg" alt="">
+            <img src="../../assets/images/headline.jpg" alt="">
         </div>
         <swiper class="headlinewindow" :options="swiperOption">
             <swiper-slide  v-for="item of news" :key="item.id">
@@ -30,7 +30,7 @@ export default {
                 autoplay: {
                     delay: 3000,
                     stopOnLastSlide: false,
-                    disableOnInteraction: false,
+                    disableOnInteraction: false, 
                 },
             },
             news:[{

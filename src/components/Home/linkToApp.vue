@@ -1,7 +1,7 @@
 <template>
     <div class="link-to-app">
         <div class="link-title">
-            <img src="../assets/images/linkicon.jpg" alt="">
+            <img src="../../assets/images/linkicon.jpg" alt="">
             <span class="title-name">吃喝玩乐，找优惠</span>
         </div>
         <div class="link-btn">

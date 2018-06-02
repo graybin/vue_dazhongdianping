@@ -1,9 +1,9 @@
 <template>
 	<div class="header">
-		<a class="city">
+		<router-link to="/city" class="city">			
 			<span>广州</span>
 			<span class="iconfont">&#xe642;</span>
-		</a>
+		</router-link>
 		<div class="search">
 			<span class="iconfont">&#xe60b;</span>
 			<span>输入商户名、地点</span>
@@ -36,6 +36,8 @@ export default {
 			display: block;
 			width: 3.3rem;
 			margin-left: 0.72rem;
+			text-decoration: none;
+			color: #fff;
 		}
 
 		.search{
