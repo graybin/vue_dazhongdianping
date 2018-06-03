@@ -11,7 +11,9 @@
            <div class="search-box">
                <div class="search-text">
                    <span class="iconfont text-left">&#xe60b;</span>
-                   <span>输入城市名或拼音查询</span>
+                   <router-link to="/citysearch">
+                       <span>输入城市名或拼音查询</span>
+                   </router-link>
                </div>
            </div>
        </div>
@@ -118,6 +120,14 @@ export default {
             vertical-align: 10px;
             margin-left: 16px;
             position: relative;
+
+            a{
+                text-decoration: none;
+            }
+            
+            a:visited{
+                color: #999;
+            }
 
             .text-left{
                 font-size: 16px;

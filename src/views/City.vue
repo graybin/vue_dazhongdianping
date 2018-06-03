@@ -2,7 +2,7 @@
   <div class="City">
     <city-header></city-header>
     <hot-city :hotCityList='hotCityList'></hot-city>
-    <city-list :cityList='cityList' :cityLetter='cityLetter'></city-list>
+    <city-list :cityList='cityList'></city-list>
   </div>
 </template>
 
@@ -17,8 +17,7 @@ export default {
   data(){
     return{
       hotCityList:[],
-      cityList:[],
-      cityLetter:[]
+      cityList:[]
     }
   },
   components:{
@@ -33,10 +32,7 @@ export default {
     },
     handleCityInfo(res){
       this.hotCityList = res.data.hotCityList
-      var cityList = res.data.cityList
-      for(var i in cityList){
-        this.cityLetter.push(cityList[i].letter)
-      }
+      this.cityList = res.data.cityList
     }
   },
   mounted(){

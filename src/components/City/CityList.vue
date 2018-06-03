@@ -6,18 +6,18 @@
             </div>
             <div class="city-letter">
                 <ul>
-                    <li v-for="(item,index) of cityLetter" :key='index'>
-                        <a :href="'#'+item">{{item}}</a>
+                    <li v-for="(item,index) of cityList" :key='index + "0"'>
+                        <a :href="'#'+ item.letter">{{item.letter}}</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="C-list">
-            <div v-for="item of cityLetter" :key="item + 0">
-                <div :id="item" class="letter-title">{{item}}</div>
+            <div v-for="(item,index) of cityList" :key="index+'1'">
+                <div :id="item.letter" class="letter-title">{{item.letter}}</div>
                 <div class="city-name">
-                    <div class="locate-name" v-for="(item,index) of cityList" :key='index'>
-                        {{item}}
+                    <div class="locate-name" v-for="(item1,index) of item.city" :key='index+"2"'>
+                        {{item1}}
                     </div>
                 </div>
             </div>
@@ -29,13 +29,12 @@
 export default {
     name:'CityList',
     props:{
-        cityList:Array,
-        cityLetter:Array
+        cityList:Array
     },
     data(){
         return{  
         }
-    } 
+    }
 }
 </script>
 
@@ -96,6 +95,7 @@ export default {
             .locate-name{
             box-sizing: border-box;
             width: 33.3333%;
+            height: 48px;
             line-height: 48px;
             border-bottom: 1px solid #ededed;
             border-right: 1px solid #ededed;
@@ -103,6 +103,8 @@ export default {
             color: #323232;
             font-size: 16px;
             overflow: hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
             }    
         }
         
