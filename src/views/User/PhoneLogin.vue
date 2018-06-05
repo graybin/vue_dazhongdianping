@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <user-header></user-header>
+        <user-header :loginName = 'loginName'></user-header>
         <mobile-login></mobile-login>
     </div>
 </template>
@@ -10,7 +10,12 @@ import UserHeader from '@/components/User/UserHeader.vue'
 import MobileLogin from '@/components/User/MobileLogin.vue'
 
 export default {
-    name:'User',
+    name:'PhoneLogin',
+    data() {
+        return {
+            loginName:'手机快捷登录'
+        }
+    },
     components:{
         UserHeader,
         MobileLogin

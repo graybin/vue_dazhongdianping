@@ -15,7 +15,7 @@
             </div>
             <div  class="btn_login" @click="handleCheck">登录</div>
             <div class="link_normal">
-                <router-link to="/numberlogin">账号密码登录</router-link>
+                <div @click="handlenumberlogin">账号密码登录</div>
             </div>
         </div>     
     </div>
@@ -44,20 +44,45 @@ export default {
             }
             if(number.length == 11){
                 Bmob.Sms.requestSmsCode({"mobilePhoneNumber": number} ).then(function(obj) {
-                    alert("smsId:"+obj.smsId); //
+                    alert("验证码已发送，请注意查收。"); //
                     }, function(err){
-                    alert("发送失败:"+err);
+                    alert("验证码发送失败，请重试。");
                 });
             }
         },
         handleCheck(){
+            var dazhong = Bmob.Object.extend("dazhong");
+            var query = new Bmob.Query(dazhong);
             var that = this;
             Bmob.Sms.verifySmsCode(this.phonenumber, this.checknumber).then(function(obj) {
-                alert("msg:"+obj.msg)
-                that.$router.push('/') 
+                query.equalTo("phone", that.phonenumber);
+                query.find({
+                    success: function(results) {
+                        if(!results.length){
+                            if(confirm('首次登录请设置密码。')){
+                                if(!that.phonenumber && that.phonenumber.length != 11){
+                                    alert('在填写验证码前请不要删除手机号码，请重新验证')
+                                }
+                                else{
+                                    that.$store.state.phone = that.phonenumber
+                                    that.$router.push('/checkpassword')    
+                                }
+                            }
+                            else{
+                                alert('不登录随便逛逛？')
+                                that.$router.push('/')
+                            }
+                        }
+                    },
+                    error: function(error) {
+                    }
+                });
             }, function(err){
-                alert("发送失败:"+err);
+                alert("验证码输入错误,请重新输入。");
             });
+        },
+        handlenumberlogin(){
+            this.$router.push('/numberlogin')
         }
     }
 
@@ -156,7 +181,7 @@ export default {
             text-align: right;
             margin-top: 14.5px;
 
-            a{
+            div{
                 color:gray;
                 text-decoration: none;
                 font-size: 14px;

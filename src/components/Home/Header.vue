@@ -8,7 +8,7 @@
 			<span class="iconfont">&#xe60b;</span>
 			<span>输入商户名、地点</span>
 		</div>
-		<router-link class="self" to="/user">
+		<router-link class="self" to="/phonelogin">
 			<span class="iconfont">&#xe6b0;</span>
 		</router-link>
 	</div>

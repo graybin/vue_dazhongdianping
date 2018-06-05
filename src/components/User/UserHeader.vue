@@ -1,16 +1,24 @@
 <template>
     <div class="user_header">
-        <router-link to="/" class="uh_left">&lt;</router-link> 
-        <div class="uh_right">{{headername}}</div>
+        <div to="/" class="uh_left" @click="handleBack">&lt;</div> 
+        <div class="uh_right">{{loginName}}</div>
     </div>
 </template>
 
 <script>
 export default {
     name:'UserHeader',
+    props:{
+        loginName: String
+    },
     data(){
         return{
-            headername:'手机号快速登录'
+            headername:''
+        }
+    },
+    methods: {
+        handleBack(){
+            this.$router.go(-1);
         }
     }
 }

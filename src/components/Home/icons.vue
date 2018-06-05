@@ -1,5 +1,6 @@
 <template>
-    <div class="icons" v-if="iconsList.length">
+    <div class="icons">
+        <div class="placeholder" v-if="!iconsList.length"><p>Loading...</p></div>
         <swiper :options="swiperOption">
             <swiper-slide v-for="(page , index) of pages" :key="index">
                 <div class="iconsFix">
@@ -52,6 +53,14 @@ export default {
         position: relative;
         height: 14.9rem;
         text-align: center;
+        overflow: hidden;
+
+        .placeholder{
+            height: 14.9rem;
+            font-size: 40px;
+            color: #f63;
+            line-height: 14.9rem;
+        }
 
         .iconsFix{
             display: flex;

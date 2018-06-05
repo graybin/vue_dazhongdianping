@@ -1,9 +1,6 @@
 <template>
     <div class="number_login">
-        <div class="user_header">
-            <router-link to="/user" class="uh_left">&lt;</router-link> 
-            <div class="uh_right">{{headername}}</div>
-        </div>
+        <user-header :loginName = 'loginName'></user-header>
         <div class="number_form">
             <div class="login_number">
                 <span>86</span>
@@ -17,7 +14,7 @@
         <div class="login_footer">
             <div  class="btn_login" @click="handleLogin">登录</div>
             <div class="link_normal">
-                <router-link to="/numberlogin">忘记密码？</router-link>
+                <div @click="handleReset">忘记密码？</div>
             </div>
         </div>
     </div>
@@ -25,29 +22,46 @@
 
 <script>
 import '@/assets/script/key.js'
+import UserHeader from '@/components/User/UserHeader.vue'
+import jquery from 'jquery'
+import '@/assets/script/key'
 
 export default {
-    name:'NumberLogin',
+    name: 'NumberLogin',
     data() {
         return {
-            headername:'账号密码登录',
             number:'',
-            password:''
+            password:'',
+            loginName: '账号密码登录'
         }
+    },
+    components: {
+        UserHeader  
     },
     methods: {
         handleLogin(){
-            var GameScore = Bmob.Object.extend("GameScore");
-            var gameScore = new GameScore();
-            gameScore.set('', this.password);
-            gameScore.save(null, {
-            success: function(object) {
-                alert("create object success, object id:"+object.id);
-            },
-            error: function(model, error) {
-                alert("create object fail");
-            }
+            var that = this
+            var Dazhong = Bmob.Object.extend("dazhong");
+            var query = new Bmob.Query(Dazhong);
+            query.equalTo("phone", this.number);
+            query.equalTo("password", this.password);
+            query.find({
+                success: function(results) {
+                    if(results.length){
+                        alert('登录成功，即将回到首页！')
+                        that.$router.push('/')
+                    }
+                    else{
+                        alert('您的账号密码输入不一致或尚未注册！')
+                    }
+                },
+                error: function(error) {
+                    alert("网络或Bmob原因登录失败");
+                }
             });
+        },
+        handleReset(){
+            this.$router.push('/findpassword')
         }
     }
 }
@@ -57,28 +71,6 @@ export default {
 <style lang="scss" scoped>
 .number_login{
 
-    .user_header{
-        display: flex;
-        height: 45px;
-        line-height: 45px;
-        background: #fcfcfc;
-        border-bottom: 1px solid #f63;
-
-        .uh_left{
-            text-decoration: none;
-            float: left;
-            color:#f63;
-            font-size:25px;
-            margin-left: 15px;
-        }
-
-        .uh_right{
-            flex:1;
-            display: inline-block;
-            text-align: center;
-            font-size: 18px;
-        }
-    }
     
     .number_form{
         .login_number{
@@ -145,7 +137,7 @@ export default {
             text-align: left;;
             margin-top: 14.5px;
 
-            a{
+            div{
                 color:gray;
                 text-decoration: none;
                 font-size: 14px;
