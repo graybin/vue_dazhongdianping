@@ -1,7 +1,7 @@
 <template>
     <div class="citylist">
         <div class="citymodel">
-            <div class="head">
+            <div class="head" v-show="cityList.length">
                 更多城市
             </div>
             <div class="city-letter">
@@ -15,8 +15,9 @@
         <div class="C-list">
             <div v-for="(item,index) of cityList" :key="index+'1'">
                 <div :id="item.letter" class="letter-title">{{item.letter}}</div>
-                <div class="city-name">
-                    <div class="locate-name" v-for="(item1,index) of item.city" :key='index+"2"'>
+                <div class="city-name" >
+                    <div class="locate-name" v-for="(item1,index) of item.city" :key='index+"2"'
+                    @click="handleCityClick(item1)">
                         {{item1}}
                     </div>
                 </div>
@@ -33,6 +34,13 @@ export default {
     },
     data(){
         return{  
+        }
+    },
+    methods:{
+        handleCityClick(item1){
+            this.$store.dispatch('changeCity',item1)
+            this.$router.push('/')
+            window.scrollTo(0,0)
         }
     }
 }

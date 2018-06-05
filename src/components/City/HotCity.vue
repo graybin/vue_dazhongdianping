@@ -1,10 +1,11 @@
 <template>
     <div>
-        <div class="hotcity-head">
+        <div class="hotcity-head" v-show="hotCityList.length">
             热门城市
         </div>
         <div class="hot-city-name">
-            <div class="hot-locate-name" v-for="(item,index) of hotCityList" :key="index">
+            <div class="hot-locate-name" v-for="(item,index) of hotCityList" :key="index"
+            @click="handleCityClick(item)">
                 {{item}}
             </div>
         </div>
@@ -19,6 +20,12 @@ export default {
     },
     data(){
         return{
+        }
+    },
+    methods:{
+        handleCityClick(city){
+            this.$store.dispatch('changeCity',city)
+            this.$router.push("/")
         }
     }
 }

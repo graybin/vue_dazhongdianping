@@ -1,12 +1,12 @@
 <template>
-    <div class="icons">
+    <div class="icons" v-if="iconsList.length">
         <swiper :options="swiperOption">
             <swiper-slide v-for="(page , index) of pages" :key="index">
                 <div class="iconsFix">
                     <a class="icon" v-for="item of page" :key="item.id">
-                        <div >
-                            <img class="iconImg" :src="item.url">
-                                <span>{{item.desc}}</span>
+                        <div>
+                            <img class="iconImg" :src="item.url" alt='图标'>
+                            <span>{{item.desc}}</span>
                         </div>              
                     </a>
                 </div>

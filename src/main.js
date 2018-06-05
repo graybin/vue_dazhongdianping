@@ -7,6 +7,7 @@ import './registerServiceWorker'
 import './assets/scss/reset.css'
 import './assets/scss/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import './assets/script/key'
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)

@@ -1,16 +1,16 @@
 <template>
 	<div class="header">
 		<router-link to="/city" class="city">			
-			<span>广州</span>
+			<span class="h-city-name">{{this.$store.state.city}}</span>
 			<span class="iconfont">&#xe642;</span>
 		</router-link>
 		<div class="search">
 			<span class="iconfont">&#xe60b;</span>
 			<span>输入商户名、地点</span>
 		</div>
-		<a class="self">
+		<router-link class="self" to="/user">
 			<span class="iconfont">&#xe6b0;</span>
-		</a>
+		</router-link>
 	</div>
 </template>
 
@@ -30,14 +30,30 @@ export default {
 		text-align: center;
 		color: #fff;
 		display: flex;
+		z-index: 100;
 
 		.city{
 			float: left;
 			display: block;
-			width: 3.3rem;
+			max-width: 60px;
 			margin-left: 0.72rem;
 			text-decoration: none;
 			color: #fff;
+			display: flex;
+
+			.h-city-name{
+				flex: 1;
+				display: inline-block;
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space:nowrap;
+			}
+
+			.iconfont{
+				float: right;
+			}
+
+
 		}
 
 		.search{
@@ -63,11 +79,12 @@ export default {
 			display: block;
 			width: 2rem;
 			margin-right: 0.72rem;
+			text-decoration: none;
+			color: #fff;
 
 			.iconfont{
 				font-size:1.7rem;
 			}
-		}
-		
+		}		
 	}	
 </style>

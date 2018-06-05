@@ -33,6 +33,7 @@ export default {
     handleCityInfo(res){
       this.hotCityList = res.data.hotCityList
       this.cityList = res.data.cityList
+      this.$store.commit('changeCityList',res.data.cityList)
     }
   },
   mounted(){

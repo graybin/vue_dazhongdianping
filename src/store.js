@@ -5,12 +5,20 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    city: '广州',
+    cityList: []
   },
   mutations: {
-
+    changeCity (state, city) {
+      state.city = city
+    },
+    changeCityList (state, cityList) {
+      state.cityList = cityList
+    }
   },
   actions: {
-
+    changeCity (mtx, city) {
+      mtx.commit('changeCity', city)
+    }
   }
 })
