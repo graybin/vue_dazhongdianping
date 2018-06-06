@@ -27,13 +27,13 @@
 
 <script>
 export default {
-    name:'CityHeader',
-    data(){
-        return{
+    name: 'CityHeader',
+    data() {
+        return {
 
         }
     },
-    methods:{
+    methods: {
        
     }
 

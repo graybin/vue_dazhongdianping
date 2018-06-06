@@ -21,8 +21,8 @@ import '@/assets/script/key'
 
 export default {
     name: 'NumberLogin',
-    data(){
-        return{
+    data() {
+        return {
             loginName: '找回密码',
             phonenumber: '',
             checknumber: ''
@@ -32,15 +32,15 @@ export default {
         UserHeader
     },
     methods: {
-        handleSend(){
+        handleSend() {
             var that = this
             Bmob.Sms.requestSmsCode({"mobilePhoneNumber": that.phonenumber} ).then(function(obj) {
                 alert("验证码已发送，请注意查收。");
-                }, function(err){
+                }, function(err) {
                 alert("验证码发送失败，请重试！");
             });
         },
-        handleHand(){
+        handleHand() {
             var dazhong = Bmob.Object.extend("dazhong");
             var query = new Bmob.Query(dazhong);
             var that = this;
@@ -60,7 +60,7 @@ export default {
                     error: function(error) {
                     }
                 });
-            }, function(err){
+            }, function(err) {
                 alert("验证码输入错误,请重新输入。");
             });
         }

@@ -58,17 +58,17 @@ export default {
                 query.equalTo("phone", that.phonenumber);
                 query.find({
                     success: function(results) {
-                        if(!results.length){
-                            if(confirm('首次登录请设置密码。')){
-                                if(!that.phonenumber && that.phonenumber.length != 11){
+                        if(!results.length) {
+                            if(confirm('首次登录请设置密码。')) {
+                                if(!that.phonenumber && that.phonenumber.length != 11) {
                                     alert('在填写验证码前请不要删除手机号码，请重新验证')
                                 }
-                                else{
+                                else {
                                     that.$store.state.phone = that.phonenumber
                                     that.$router.push('/checkpassword')    
                                 }
                             }
-                            else{
+                            else {
                                 alert('不登录随便逛逛？')
                                 that.$router.push('/')
                             }
@@ -77,11 +77,11 @@ export default {
                     error: function(error) {
                     }
                 });
-            }, function(err){
+            }, function(err) {
                 alert("验证码输入错误,请重新输入。");
             });
         },
-        handlenumberlogin(){
+        handlenumberlogin() {
             this.$router.push('/numberlogin')
         }
     }

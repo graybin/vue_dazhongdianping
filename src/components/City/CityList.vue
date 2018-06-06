@@ -28,16 +28,16 @@
 
 <script>
 export default {
-    name:'CityList',
-    props:{
-        cityList:Array
+    name: 'CityList',
+    props: {
+        cityList: Array
     },
-    data(){
-        return{  
+    data() {
+        return {  
         }
     },
-    methods:{
-        handleCityClick(item1){
+    methods: {
+        handleCityClick(item1) {
             this.$store.dispatch('changeCity',item1)
             this.$router.push('/')
             window.scrollTo(0,0)

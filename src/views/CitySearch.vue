@@ -20,50 +20,50 @@
 
 <script>
 export default {
-    name:'CitySearch',
-    data(){
-        return{
-            value:'',
-            cityList:[],
-            searchList:[],
-            timer:''
+    name: 'CitySearch',
+    data() {
+        return {
+            value: '',
+            cityList: [],
+            searchList: [],
+            timer: ''
         }
     },
-    methods:{
-        getCityList(){
+    methods: {
+        getCityList() {
             var cityList = this.$store.state.cityList
-            for(let cityobj in cityList){
-                for(let cityname in cityList[cityobj].city){
+            for(let cityobj in cityList) {
+                for(let cityname in cityList[cityobj].city) {
                     this.cityList.push(cityList[cityobj].city[cityname])
                 }
             }
         },
-        handleResultClick(cityname){
+        handleResultClick(cityname) {
             this.$store.commit('changeCity',cityname)
             this.$router.push('/')
             window.scrollTo(0,0)
         }
     },
-    watch:{
-        value(){
-            if(this.timer){
+    watch: {
+        value() {
+            if(this.timer) {
                 clearTimeout(this.timer)
             }
-            this.timer = setTimeout(()=>{
-                this.searchList =[]
-                if(this.value){
-                    for(let item in this.cityList){
+            this.timer = setTimeout( () => {
+                this.searchList = []
+                if(this.value) {
+                    for(let item in this.cityList) {
                     let value = this.cityList[item]
                     var isfind = value.indexOf(this.value) 
-                    if(isfind !== -1){
+                    if(isfind !== -1) {
                         this.searchList.push(value)
                     }
                     }
                 }
-            },100)    
+            }, 100)    
         } 
     },
-    mounted(){
+    mounted() {
         this.getCityList()
     }
 }

@@ -17,9 +17,9 @@
 
 <script>
 export default {
-    name:'linkToApp',
-    data(){
-        return{
+    name: 'linkToApp',
+    data() {
+        return {
 
         }
     }

@@ -7,17 +7,17 @@
 
 <script>
 export default {
-    name:'UserHeader',
-    props:{
+    name: 'UserHeader',
+    props: {
         loginName: String
     },
-    data(){
-        return{
+    data() {
+        return {
             headername:''
         }
     },
     methods: {
-        handleBack(){
+        handleBack() {
             this.$router.go(-1);
         }
     }

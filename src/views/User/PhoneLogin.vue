@@ -10,13 +10,13 @@ import UserHeader from '@/components/User/UserHeader.vue'
 import MobileLogin from '@/components/User/MobileLogin.vue'
 
 export default {
-    name:'PhoneLogin',
+    name: 'PhoneLogin',
     data() {
         return {
-            loginName:'手机快捷登录'
+            loginName: '手机快捷登录'
         }
     },
-    components:{
+    components: {
         UserHeader,
         MobileLogin
     }

@@ -14,16 +14,16 @@
 
 <script>
 export default {
-    name:'HotCity',
-    props:{
-        hotCityList:Array
+    name: 'HotCity',
+    props: {
+        hotCityList: Array
     },
     data(){
-        return{
+        return {
         }
     },
-    methods:{
-        handleCityClick(city){
+    methods: {
+        handleCityClick(city) {
             this.$store.dispatch('changeCity',city)
             this.$router.push("/")
         }

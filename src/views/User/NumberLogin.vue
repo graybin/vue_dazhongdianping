@@ -30,8 +30,8 @@ export default {
     name: 'NumberLogin',
     data() {
         return {
-            number:'',
-            password:'',
+            number: '',
+            password: '',
             loginName: '账号密码登录'
         }
     },
@@ -39,7 +39,7 @@ export default {
         UserHeader  
     },
     methods: {
-        handleLogin(){
+        handleLogin() {
             var that = this
             var Dazhong = Bmob.Object.extend("dazhong");
             var query = new Bmob.Query(Dazhong);
@@ -60,7 +60,7 @@ export default {
                 }
             });
         },
-        handleReset(){
+        handleReset() {
             this.$router.push('/findpassword')
         }
     }

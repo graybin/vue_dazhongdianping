@@ -4,10 +4,10 @@
     <div style="height:3.57rem;"></div>
     <link-to-app></link-to-app>
     <home-icons :iconsList="iconsList"></home-icons>
-    <headline></headline>
+    <headline :news = 'news'></headline>
     <redbag></redbag>
-    <super-reduce></super-reduce>
-    <recommand></recommand>
+    <super-reduce :saleList = 'saleList'></super-reduce>
+    <recommand :recommandList = 'recommandList'></recommand>
   </div>
 </template>
 
@@ -24,9 +24,12 @@ import axios from 'axios'
 
 export default {
   name: 'home',
-  data(){
-    return{
-      iconsList:[] 
+  data() {
+    return {
+      iconsList: [],
+      recommandList: [],
+      news: [],
+      saleList: [] 
     }
   },
   components: {
@@ -38,18 +41,21 @@ export default {
     recommand,
     linkToApp
   },
-  methods:{
-    getHomeInfo(){
+  methods: {
+    getHomeInfo() {
       axios.get('https://www.easy-mock.com/mock/5af03ef9d71ec96a76df8b01/example/http:/dazhongdianping.com/iconList.json')
       .then(this.getHomeInfoSucc)
     },
-    getHomeInfoSucc(res){
-      if(res.data.status == "success" && res.data.iconsList){
+    getHomeInfoSucc(res) {
+      if(res.data.status == "success") {
         this.iconsList = res.data.iconsList
+        this.recommandList = res.data.recommandList
+        this.news = res.data.news
+        this.saleList = res.data.saleList
       }
     }
   },
-  mounted(){
+  mounted() {
     this.getHomeInfo()
   }
 }

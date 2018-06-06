@@ -21,23 +21,23 @@
 export default {
     name: 'homeIcons',
     props:{
-        iconsList:Array
+        iconsList: Array
     },
-    data(){
+    data() {
         return {
-            swiperOption :{
-                pagination:{
-                    el:'.swiper-pagination'
+            swiperOption: {
+                pagination: {
+                    el: '.swiper-pagination'
                 }
             },
         }
     },
-    computed:{
+    computed: {
         pages(){
             const pages = []
-            this.iconsList.forEach((item,index) =>{
+            this.iconsList.forEach((item,index) => {
                 const page = Math.floor(index/10)
-                if(!pages[page]){
+                if(!pages[page]) {
                     pages[page] = []
                 }
                 pages[page].push(item)

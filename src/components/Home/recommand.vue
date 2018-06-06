@@ -37,42 +37,12 @@
 
 <script>
 export default {
-    name:'recommand',
-    data(){
-        return{
-            recommandList:[{
-                id:'00001',
-                url:'https://p0.meituan.net/deal/48966d42a1537a3eb052533236fed77286769.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                desc:' [江南大道] 红烧乳鸽1份，提供免费WiFi',
-                name:'广饮讲食鸽子皇',
-                price:'9.9',
-                lprice:'96',
-                people:'16952'
-            },{
-                id:'00002',
-                url:'https://p0.meituan.net/deal/48966d42a1537a3eb052533236fed77286769.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                desc:' [江南大道] 红烧乳鸽1份，提供免费WiFi',
-                name:'广饮讲食鸽子皇',
-                price:'9.9',
-                lprice:'96',
-                people:'16952'
-            },{
-                id:'00003',
-                url:'https://p0.meituan.net/deal/48966d42a1537a3eb052533236fed77286769.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                desc:' [江南大道] 红烧乳鸽1份，提供免费WiFi',
-                name:'广饮讲食鸽子皇',
-                price:'9.9',
-                lprice:'96',
-                people:'16952'
-            },{
-                id:'00004',
-                url:'https://p0.meituan.net/deal/48966d42a1537a3eb052533236fed77286769.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                desc:' [江南大道] 红烧乳鸽1份，提供免费WiFi',
-                name:'广饮讲食鸽子皇',
-                price:'9.9',
-                lprice:'96',
-                people:'16952'
-            }]
+    name: 'recommand',
+    props: {
+        recommandList: Array
+    },
+    data() {
+        return {
         }
     }  
 }

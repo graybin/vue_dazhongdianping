@@ -22,8 +22,8 @@
 
 <script>
 export default {
-    name:'redbag',
-    data(){
+    name: 'redbag',
+    data() {
         return{
 
         }

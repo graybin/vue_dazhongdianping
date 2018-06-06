@@ -26,28 +26,12 @@
 
 <script>
 export default {
-    name:'superReduce',
-    data(){
+    name: 'superReduce',
+    props: {
+        saleList: Array
+    },
+    data() {
         return{
-            saleList:[{
-                id:'0001',
-                url:'https://p1.meituan.net/deal/892e8ed1198fd4a7d12e3cb0c858a3f8337439.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                name:'北京烤鸭',
-                nprice:'1',
-                dprice:'￥250'
-            },{
-                id:'0002',
-                url:'https://p0.meituan.net/deal/48966d42a1537a3eb052533236fed77286769.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                name:'北京烤鸭',
-                nprice:'1',
-                dprice:'￥250'
-            },{
-                id:'0003',
-                url:'https://p0.meituan.net/deal/48966d42a1537a3eb052533236fed77286769.jpg%40450w_280h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
-                name:'北京烤鸭',
-                nprice:'1',
-                dprice:'￥250'
-            }]
         }
     }
 }
