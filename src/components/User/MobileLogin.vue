@@ -73,6 +73,9 @@ export default {
                                 that.$router.push('/')
                             }
                         }
+                        else{
+                            that.$router.push('/')
+                        }
                     },
                     error: function(error) {
                     }
